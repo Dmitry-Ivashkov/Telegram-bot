@@ -15,3 +15,8 @@ lazy val root = project.in(file("."))
     test in assembly := {},
     mainClass in assembly := Some("org.MyTelegramBot.MyTelegramBotMain")
   )
+  .settings(
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision,
+    scalacOptions += "-Ywarn-unused"
+  )
